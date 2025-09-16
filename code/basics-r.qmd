@@ -1,0 +1,40 @@
+---
+title: "Quarto Demo"
+format: html
+toc: true
+execute: 
+  cache: true
+editor: 
+  render-on-save: true
+code-fold: show
+code-annotations: hover
+code-line-numbers: true
+code-summary: "Toggle Code"
+---
+
+:::{.callout-note}
+You can preview this file by clicking the preview button in the top right corner or by opening the command palette (`cmd+shift+p`) and searching "Quarto Preview".  
+:::
+
+This is a [Quarto](https://quarto.org/) file. It's a file format designed to **mix code and prose** in multiple programming languages (e.g. Python, R, etc) and easy to **version control** (git/github). By default this file can be opened by any program that can read plain-text. To execute code (i.e. use Python or R to run analysis, generate figures, etc) we can use VSCode (or RStudio) to **run or preview** the file. 
+
+By default this outputs an *HTML file* you can preview in your browser, share online etc. This workflow is more familiar among R users.
+
+Alternatively you can convert any `.qmd` file to an interactive **notebook** file (`.ipynb`) that embeds **outputs** alongside your code and figures in a single file renderable on Github. This workflow is more familiar among Python users.
+
+Both have their strengths, but you don't need to pick! Just use `pixi run convert myfile.qmd` or `pixi run convert myfile.ipynb` to easily convert between the two formats!
+
+
+## R basics
+
+```{r}
+#| label: fig-airquality
+#| fig-cap: "Temperature and ozone level."
+#| warning: false
+
+library(ggplot2)
+
+ggplot(airquality, aes(Temp, Ozone)) + 
+  geom_point() + 
+  geom_smooth(method = "loess")
+```

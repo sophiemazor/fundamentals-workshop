@@ -1,2 +1,7 @@
 # pixi environments
 .pixi
+code/*_files
+code/.jupyter_cache
+code/*-r_cache
+code/*.html
+pixi.lock
