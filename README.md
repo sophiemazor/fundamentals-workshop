@@ -43,3 +43,5 @@
   - `pixi run preview myfile.qmd`
 - You can always "enter/activate" the environment if you need to do something via the command-line but need to use R/Python inside `.pixi/`
   - `pixi shell` -> environment is now active (like `conda activate myenv`)
+- Similarily you can run arbitrary commands using packages in your environment
+  - `pixi run quarto render myfile.qmd` -> Quarto version from environment is used to render file
