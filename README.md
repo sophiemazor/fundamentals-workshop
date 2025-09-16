@@ -18,6 +18,13 @@
 - Open any file in `code/` and run `pixi run preview filename.qmd` in your terminal
 - The preview will auto-update whenever you save and cache expensive calculations
 
+## Adding/Removing Libraries
+
+- Use the commands below to add/remove Python and R libraries. They will be auto-update `pixi.toml`for you!
+- Python: `pixi add package` or `pixi add --pypi package`
+- R: `pixi add r-package`
+- Removing: just swap `pixi add` with `pixi remove`
+
 ## Converting qmd and notebook files
 
 - To work with files interactively *without* a separate preview window you may prefer the Jupyter notebook format (`.ipynb`)
