@@ -1,0 +1,45 @@
+[workspace]
+name = "fundamentals-workshop"
+version = "0.1.0"
+authors = ["ejolly <eshin.jolly@gmail.com>"]
+channels = ["ejolly", "conda-forge"]
+platforms = ["osx-arm64"]
+repository = "https://github.com/psyc-201/fundamentals-workshop/"
+
+[dependencies]
+python = ">=3.11" 
+pymer4 = ">=0.9.2"
+ipykernel = ">=6.29.5,<7"
+ruff = ">=0.12.2,<0.13"
+jupyter = ">=1.1.1,<2"
+quarto = ">=1.7.32,<2"
+jupyter-cache = ">=1.0.1,<2"
+
+[tasks]
+setup = [
+{ task = "init_profile" }, 
+{ task = "setup_profile" }, 
+{ task = "setup_ipython" }]
+
+[tool.pixi.tasks.preview]
+args =["name"]
+cmd = "quarto preview code/{{ name }}"
+
+# --Python kernel setup tasks--
+[tasks.init_profile]
+cmd = "mkdir .pixi/envs/default/etc/ipython && ipython profile create --ipython-dir=\"$(pwd)/.pixi/envs/default/etc/ipython/\""
+
+[tasks.setup_profile]
+cmd = "cp .ipython_config.py \"$(pwd)/.pixi/envs/default/etc/ipython/ipython_config.py\" && cp .ipython_kernel_config.py \"$(pwd)/.pixi/envs/default/etc/ipython/ipython_kernel_config.py\""
+
+[tasks.setup_ipython]
+cmd = "python -m ipykernel install --user --name=\"$(basename $(pwd))\" --display-name=\"$(basename $(pwd))\""
+
+[tasks.kernels]
+cmd = "jupyter kernelspec list"
+
+# Python syntax-checking settings
+[tool.ruff]
+extend-include = ["*.ipynb", "*.qmd"]
+[tool.ruff.lint]
+ignore = ["W292", "E501", "E731", "E741", "F401", "E703"]

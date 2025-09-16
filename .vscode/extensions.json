@@ -1,0 +1,19 @@
+{
+  "recommendations": [
+    "charliermarsh.ruff",
+    "ms-python.python",
+    "ms-python.vscode-pylance",
+    "ms-toolsai.jupyter",
+    "ms-toolsai.jupyter-renderers",
+    "njpwerner.autodocstring",
+    "GrapeCity.gc-excelviewer",
+    "tomoki1207.pdf",
+    "waderyan.gitblame",
+    "mhutchie.git-graph",
+    "christian-kohler.path-intellisense",
+    "Gruntfuggly.todo-tree",
+    "redhat.vscode-yaml",
+    "quarto.quarto",
+    "REditorSupport.r-syntax"
+  ]
+}

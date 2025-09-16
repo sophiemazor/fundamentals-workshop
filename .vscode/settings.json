@@ -1,0 +1,45 @@
+{
+  // Configure Python
+  "python.defaultInterpreterPath": ".pixi/envs/default/bin/python",
+  "[python]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.ruff": "never",
+      "source.organizeImports": "never"
+    },
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.formatOnSave": true,
+    "editor.insertSpaces": true,
+    "editor.tabSize": 4
+  },
+
+  // Configure Ruff linter/formatter
+  "notebook.defaultFormatter": "charliermarsh.ruff",
+  "notebook.formatOnSave.enabled": true,
+  "ruff.importStrategy": "fromEnvironment",
+  "ruff.lint.ignore": [
+    "W292",
+    "E501",
+    "E731",
+    "E741",
+    "F401",
+    "E703"
+  ],
+
+  // Configure Quarto
+  "[quarto]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.formatOnSave": true
+  },
+
+  // Hide these folder from the explorer sidebar
+  "files.exclude": {
+    ".ipython_config.py": true,
+    ".ipython_kernel_config.py": true,
+    ".gitattributes": true,
+  },
+
+  // Configure Python
+  "python.analysis.typeCheckingMode": "off",
+
+  // You additional settings below
+}
