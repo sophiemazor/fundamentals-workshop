@@ -1,7 +1,7 @@
 ---
 title: "R fundamentals"
-author: "Tobias Gerstenberg (adapted by Bria Long)"
-date: "January 10th, 2022 (adapted Sept, 2025"
+author: "Tobias Gerstenberg, adapted by Bria Long"
+date: "January 10th, 2022, adapted Sept, 2025"
 output: 
   bookdown::html_document2:
     toc: true
