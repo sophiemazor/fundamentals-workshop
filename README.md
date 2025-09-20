@@ -12,8 +12,9 @@
 3. Setup reproducible environment - from within the folder run `pixi install`
 4. Configure Quarto - from with the folder run: `pixi run setup`
 5. Open the folder with VSCode/Positron
+6. Open a live preview of all files - `pixi run render`
 
-## Executing Code
+## Working with Single Files
 
 - Open any file in `code/` and run `pixi run preview filename.qmd` in your terminal
 - The preview will auto-update whenever you save and cache expensive calculations
@@ -30,7 +31,7 @@
 - To work with files interactively *without* a separate preview window you may prefer the Jupyter notebook format (`.ipynb`)
 - You can easily convert `.qmd` <-> `.ipynb` as both formats mix code + prose
   - However `.ipynb` files also store *outputs* (results, figures, etc)
-- Just use `pixi run convert filename.qmd/ipynb` and Quarto will convert to the other format
+- Just use `pixi run convert filename.qmd` or `pixi run convert filename.ipynb` and Quarto will convert to the other format
 
 ## How it Works
 

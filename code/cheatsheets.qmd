@@ -1,0 +1,17 @@
+# Cheatsheets
+
+## R
+- [basics](./figures/base-r.pdf)
+- [`dplyr`](./figures/data-transformation.pdf) - dataframe & data-wrangling
+- [ggplot](https://ggplot2.tidyverse.org/) - statistical visualizations
+
+
+## Python
+- [basics](./figures/python-basics.pdf) 
+- [`polars`](https://stat-intuitions.com/labs/3/01_polars-solutions.html) - dataframes & data-wrangling
+- [`seaborn`](https://seaborn.pydata.org/tutorial.html) - statistical visualization
+
+
+## R <-> Python
+- [A primer on Python for R users](https://cran.r-project.org/web/packages/reticulate/vignettes/python_primer.html)
+- [A tidyverse R and polars Python side-by-side](https://robertmitchellv.com/blog/2022-07-r-python-side-by-side/r-python-side-by-side.html)

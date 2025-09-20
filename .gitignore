@@ -2,6 +2,12 @@
 .pixi
 code/*_files
 code/.jupyter_cache
-code/*-r_cache
+code/*_cache
+code/*_files
 code/*.html
+code/_output
+code/.quarto
 pixi.lock
+CLAUDE.md
+
+/.quarto/

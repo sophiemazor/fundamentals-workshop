@@ -18,6 +18,14 @@ jupyter = ">=1.1.1,<2"
 quarto = ">=1.7.32,<2"
 jupyter-cache = ">=1.0.1,<2"
 seaborn = ">=0.13.2,<0.14"
+r-skimr = ">=2.2.1,<3"
+r-visdat = ">=0.6.0,<0.7"
+r-dt = ">=0.34.0,<0.35"
+r-tidyverse = ">=2.0.0,<3"
+r-knitr = ">=1.50,<2"
+r-languageserver = ">=0.3.16,<0.4"
+r-rmarkdown = ">=2.29,<3"
+r-irkernel = ">=1.3.2,<2"
 
 # Tasks are shell commands we can call with pixi run myTask
 # We include some that configure the environment for you when you
@@ -27,6 +35,8 @@ setup = [
 { task = "init_profile" }, 
 { task = "setup_profile" }, 
 { task = "setup_ipython" }]
+
+render = "quarto preview code/"
 
 [tasks.preview]
 args =["name"]

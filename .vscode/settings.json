@@ -1,4 +1,8 @@
 {
+  // Configure R
+  "r.rpath.mac": "${workspaceFolder}/.pixi/envs/default/bin/R",
+  "r.alwaysUseActiveTerminal": true,
+
   // Configure Python
   "python.defaultInterpreterPath": ".pixi/envs/default/bin/python",
   "[python]": {
@@ -26,6 +30,7 @@
   ],
 
   // Configure Quarto
+  "quarto.path": ".pixi/envs/default/bin/quarto",
   "[quarto]": {
     "editor.defaultFormatter": "charliermarsh.ruff",
     "editor.formatOnSave": true
@@ -35,11 +40,20 @@
   "files.exclude": {
     ".ipython_config.py": true,
     ".ipython_kernel_config.py": true,
+    "code/.jupyter_cache": true,
+    "code/_output": true,
+    "code/.quarto": true,
+    "code/index_files": true,
     ".gitattributes": true,
+    "code/python-basics_files": true,
+    "code/python-basics_cache": true,
+    "code/r-basics_files": true,
+    "code/r-basics_cache": true,
   },
 
   // Configure Python
   "python.analysis.typeCheckingMode": "off",
 
   // You additional settings below
+  "redhat.telemetry.enabled": false,
 }
