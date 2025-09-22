@@ -915,6 +915,8 @@ Compute the body mass index for `masculine` characters who are `human`.
 
 ```{r}
 # write your code here 
+df.bmi = df.starwars %>%
+
 ```
 
 ## Additional resources
