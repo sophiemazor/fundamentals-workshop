@@ -31,6 +31,7 @@ install.packages(("knitr"))
 install.packages(("skimr"))
 install.packages(("visdat"))
 install.packages(("DT"))
+install.packages(("tidyverse"))
 library("knitr")        # for rendering the RMarkdown file
 library("skimr")        # for visualizing data 
 library("visdat")       # for visualizing data 
