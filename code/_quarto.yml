@@ -5,6 +5,7 @@ project:
   render: 
     - "*.qmd"
     - "*.md"
+    - "*.ipynb"
 
 engine: jupyter
 
@@ -35,7 +36,7 @@ website:
       - text: "R basics"
         href: r-basics.qmd
       - text: "Python basics"
-        href: python-basics.qmd
+        href: python-basics.ipynb
       - text: "Cheatsheets"
         href: cheatsheets.qmd
 

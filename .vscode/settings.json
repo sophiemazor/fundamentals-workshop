@@ -1,7 +1,7 @@
 {
   // Configure R
   "r.rpath.mac": "${workspaceFolder}/.pixi/envs/default/bin/R",
-  "r.alwaysUseActiveTerminal": true,
+  // "r.alwaysUseActiveTerminal": true,
 
   // Configure Python
   "python.defaultInterpreterPath": ".pixi/envs/default/bin/python",
