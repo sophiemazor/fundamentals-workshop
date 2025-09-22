@@ -27,7 +27,7 @@ Let's first load the packages that we need for this chapter.
 
 ```{r}
 #| output: false
-install.packages(("knitr"))
+install.packages(("knitr")) #install packages 
 install.packages(("skimr"))
 install.packages(("visdat"))
 install.packages(("DT"))
