@@ -11,6 +11,7 @@ repository = "https://github.com/psyc-201/fundamentals-workshop/"
 # This file will be auto-updated for you!
 [dependencies]
 python = ">=3.11" 
+r-base = ">4.3"
 pymer4 = ">=0.9.2"
 ipykernel = ">=6.29.5,<7"
 ruff = ">=0.12.2,<0.13"
@@ -27,14 +28,19 @@ r-languageserver = ">=0.3.16,<0.4"
 r-rmarkdown = ">=2.29,<3"
 r-irkernel = ">=1.3.2,<2"
 
+# Python syntax-checking settings
+[tool.ruff]
+extend-include = ["*.ipynb", "*.qmd"]
+[tool.ruff.lint]
+ignore = ["W292", "E501", "E731", "E741", "F401", "E703"]
+
 # Tasks are shell commands we can call with pixi run myTask
 # We include some that configure the environment for you when you
 # use pixi run setup
 [tasks]
 setup = [
-{ task = "init_profile" }, 
-{ task = "setup_profile" }, 
-{ task = "setup_ipython" }]
+{ task = "setup_rkernel" }, 
+{ task = "setup_pykernel" }]
 
 render = "quarto preview code/"
 
@@ -46,21 +52,16 @@ cmd = "quarto preview code/{{ name }}"
 args =["name"]
 cmd = "quarto convert code/{{ name }}"
 
-# --Python kernel setup sub-tasks--
-[tasks.init_profile]
-cmd = "mkdir .pixi/envs/default/etc/ipython && ipython profile create --ipython-dir=\"$(pwd)/.pixi/envs/default/etc/ipython/\""
+# Register an R kernelspec INSIDE THIS ENV (no HOME pollution).
+# prefix := dirname(R.home('share')) → <env>/share/jupyter/kernels
+[tasks.setup_rkernel]
+cmd = """R -q -e "prefix <- normalizePath(file.path(R.home('home'), '..', '..')); IRkernel::installspec(name='fundamentals-workshop-R', displayname='R (fundamentals-workshop)', user=FALSE, prefix=prefix, verbose=TRUE)" """
 
-[tasks.setup_profile]
-cmd = "cp .ipython_config.py \"$(pwd)/.pixi/envs/default/etc/ipython/ipython_config.py\" && cp .ipython_kernel_config.py \"$(pwd)/.pixi/envs/default/etc/ipython/ipython_kernel_config.py\""
-
-[tasks.setup_ipython]
-cmd = "python -m ipykernel install --user --name=\"$(basename $(pwd))\" --display-name=\"$(basename $(pwd))\""
+# Register a Python kernelspec INSIDE THIS ENV (no HOME pollution).
+# prefix := sysconfig.get_paths()['data'] → <env>/share/jupyter/kernels
+[tasks.setup_pykernel]
+cmd = "python -c \"import sys, sysconfig, subprocess; p=sysconfig.get_paths()['data']; subprocess.check_call([sys.executable,'-m','ipykernel','install','--name','fundamentals-workshop-py','--display-name','Python (fundamentals-workshop)','--prefix',p])\""
 
 [tasks.kernels]
 cmd = "jupyter kernelspec list"
 
-# Python syntax-checking settings
-[tool.ruff]
-extend-include = ["*.ipynb", "*.qmd"]
-[tool.ruff.lint]
-ignore = ["W292", "E501", "E731", "E741", "F401", "E703"]

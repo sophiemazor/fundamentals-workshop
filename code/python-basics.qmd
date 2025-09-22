@@ -2,9 +2,7 @@
 title: "Python fundamentals for data wrangling"
 author: "Tobias Gerstenberg, adapted by Bria Long, Python version by Eshin Jolly"
 date: "January 10th, 2022, adapted Sept, 2025"
-# jupyter: fundamentals-workshop
-# execute: 
-#   cache: true
+jupyter: fundamentals-workshop-py
 ---
 
 ```{python}

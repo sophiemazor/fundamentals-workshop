@@ -5,14 +5,16 @@ project:
   render: 
     - "*.qmd"
 
+engine: jupyter
+
 format:
   html:
     toc: true
     toc-depth: 4
     theme: cosmo
     highlight-style: tango
+    df-print: kable
 
-jupyter: fundamentals-workshop
 execute: 
   cache: true
 ipynb-shell-interactivity: all

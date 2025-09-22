@@ -2,15 +2,10 @@
 title: "R fundamentals"
 author: "Tobias Gerstenberg, adapted by Bria Long"
 date: "January 10th, 2022, adapted Sept, 2025"
-format:
-  html:
-    toc: true
-    toc-depth: 4
-    theme: cosmo
-    highlight-style: tango
-    df-print: kable
-execute:
-  cache: true
+# jupyter: fundamentals-workshop-r
+# format:
+#   html:
+#     df-print: kable
 ---
 
 ```{r}
@@ -51,7 +46,11 @@ To test your knowledge of the R basics, I recommend taking the free interactive 
 
 Variables in R can have different modes. Table \@ref(tab:variable-modes) shows the most common ones.
 
-```{r variable-modes, echo=FALSE}
+```{r}
+#| label: tbl-data-types
+#| tbl-cap: "Most commonly used data types in Python."
+#| echo: false
+
 name = c("numeric", "character", "logical", "not available")
 example = c("`1`, `3`, `48`",
             "`'Steve'`, `'a'`, `'78'`",
