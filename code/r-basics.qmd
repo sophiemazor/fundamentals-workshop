@@ -27,11 +27,6 @@ Let's first load the packages that we need for this chapter.
 
 ```{r}
 #| output: false
-install.packages(("knitr")) #install packages 
-install.packages(("skimr"))
-install.packages(("visdat"))
-install.packages(("DT"))
-install.packages(("tidyverse"))
 library("knitr")        # for rendering the RMarkdown file
 library("skimr")        # for visualizing data 
 library("visdat")       # for visualizing data 
@@ -483,6 +478,7 @@ x = seq(from = 1, to = 5, by = 1)
 log(x)
 
 # now take the log the pipe way (write your code underneath)
+x %>% log(x)
 ```
 
 ```{r}
@@ -493,6 +489,11 @@ x = seq(from = 10, to = 5, by = -1)
 mean(round(sqrt(x), digits = 2))
 
 # the pipe way (write your code underneath)
+sqrt(x) %>%
+round() %>%
+mean() %>%
+print()
+
 ```
 
 ## A quick note on naming things
@@ -796,6 +797,13 @@ Create a data frame that: - only has the species `Human` and `Droid` - with the 
 
 ```{r}
 # write your code here 
+new.df = df.starwars %>% 
+  filter(species == "Human" | species == "Droid") %>%
+  select(name, species, birth_year, homeworld) %>%
+  arrange(birth_year) %>%
+  rename(person = name)
+
+
 ```
 
 ### `mutate()`
