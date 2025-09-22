@@ -11,3 +11,5 @@ pixi.lock
 CLAUDE.md
 
 /.quarto/
+code/.DS_Store
+.DS_Store
